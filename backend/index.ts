@@ -13,16 +13,18 @@ app.use(express.json());
 app.use(favicon(path.join(__dirname,"public","favicon.ico")))
 app.use(helmet())
 
-app.use(helmet.contentSecurityPolicy({
-    directives: {
-        defaultSrc: ["'self'", 'https://marketplace-website-7.onrender.com'],
-        // Add other directives as needed
-    }
-}));
-app.use((req, res, next) => {
-    res.setHeader('Content-Security-Policy', "default-src 'self' https://marketplace-website-7.onrender.com");
-    next();
-});
+app.use(
+    helmet({
+      contentSecurityPolicy: {
+        directives: {
+          defaultSrc: ["'self'"],
+          scriptSrc: ["'self'", "https://marketplace-website-7.onrender.com"],
+          // Add other directives as necessary
+        },
+      },
+    })
+  );
+
 
 
 // Mount the router for the /signin endpoint
