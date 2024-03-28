@@ -16,7 +16,7 @@ export default function AllProducts() {
 
     const getProducts = async () => {
         try {
-            const response = await axios.post<Product[]>("http://localhost:5000/customer/products", { shopName }, {
+            const response = await axios.post<Product[]>("https://marketplace-website-6.onrender.com/customer/products", { shopName }, {
                 headers: {
                     email: email,
                     password: password
@@ -58,7 +58,7 @@ function BuyProducts({ name, price}: Buy) {
 
     const handleBuyButtonClick = async (productName : string, productPrice : number) => {
         try {
-            const response = await axios.post("http://localhost:5000/customer/cart",{productName,productPrice},{
+            const response = await axios.post("https://marketplace-website-6.onrender.com/customer/cart",{productName,productPrice},{
                 headers : {
                     email : email,
                     password : password

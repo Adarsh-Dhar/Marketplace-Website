@@ -18,7 +18,7 @@ export default function HomeShop() {
             const price = parseFloat(productPrice);
 
             const response = await axios.post(
-                "http://localhost:5000/shop/products",
+                "https://marketplace-website-6.onrender.com/shop/products",
                 {
                     productName: productName,
                     productPrice: price // Send productPrice as a number

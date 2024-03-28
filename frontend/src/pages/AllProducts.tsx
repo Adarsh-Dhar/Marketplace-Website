@@ -17,7 +17,7 @@ export default function AllProducts() {
     useEffect(() => {
         const getProducts = async () => {
             try {
-                const response = await axios.get<Product[]>("http://localhost:5000/shop/products", {
+                const response = await axios.get<Product[]>("https://marketplace-website-6.onrender.com/shop/products", {
                     headers: {
                         shop: shopName,
                         password: password

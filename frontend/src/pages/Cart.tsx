@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useRecoilValue } from "recoil";
 import { customerpasswordatom, emailatom } from "../store/atoms/customerSignin";
-
+http://localhost:5000
 interface Product {
     productName: string;
     productPrice: number;
@@ -17,7 +17,7 @@ export default function Cart() {
     useEffect(() => {
         const getProducts = async () => {
             try {
-                const response = await axios.get<Product[]>("http://localhost:5000/customer/cart", {
+                const response = await axios.get<Product[]>("https://marketplace-website-6.onrender.com/customer/cart", {
                     headers: {
                         email: email,
                         password: password

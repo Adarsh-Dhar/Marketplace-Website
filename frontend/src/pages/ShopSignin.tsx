@@ -2,8 +2,7 @@ import { useNavigate} from "react-router-dom"
 import axios from "axios"
 import { useRecoilValue, useSetRecoilState } from "recoil"
 import { shopatom, shoppasswordatom } from "../store/atoms/shopSignin"
-import { cn } from "../components/utils/cn";
-import { useMotionTemplate, useMotionValue, motion } from "framer-motion";
+
 
 
 export default function ShopSignin() {
@@ -18,7 +17,7 @@ export default function ShopSignin() {
 
     const handleClick = async () => {
         try {
-            const response = await axios.post("http://localhost:5000/shop/signin", {
+            const response = await axios.post("https://marketplace-website-6.onrender.com/shop/signin", {
                 shopName: shop,
                 password: password
             })

@@ -15,7 +15,7 @@ export default function ShopSignin() {
 
     const handleClick = async () => {
         try {
-            const Response = await axios.post("http://localhost:5000/customer/signin", {
+            const Response = await axios.post("https://marketplace-website-6.onrender.com/customer/signin", {
                 email: email,
                 password: password
             });
