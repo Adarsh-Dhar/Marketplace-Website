@@ -11,6 +11,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(favicon(path.join(__dirname,"public","favicon.ico")))
+app.use(helmet())
 
 app.use(helmet.contentSecurityPolicy({
     directives: {
