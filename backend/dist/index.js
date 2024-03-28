@@ -27,7 +27,7 @@ app.use((req, res, next) => {
 // Mount the router for the /signin endpoint
 app.use("/customer", customer_1.default);
 app.use("/shop", shop_1.default);
-const port = 5000;
-app.listen(port, () => {
-    console.log(`Server is listening on port ${port}`);
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+    console.log(`Server is listening on port ${PORT}`);
 });
