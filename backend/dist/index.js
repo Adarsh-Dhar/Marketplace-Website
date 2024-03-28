@@ -20,6 +20,10 @@ app.use(helmet.contentSecurityPolicy({
         // Add other directives as needed
     }
 }));
+app.use((req, res, next) => {
+    res.setHeader('Content-Security-Policy', "default-src 'self' https://marketplace-website-7.onrender.com");
+    next();
+});
 // Mount the router for the /signin endpoint
 app.use("/customer", customer_1.default);
 app.use("/shop", shop_1.default);
