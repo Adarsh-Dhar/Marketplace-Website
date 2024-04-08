@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useRecoilValue } from "recoil";
 import { customerpasswordatom, emailatom } from "../store/atoms/customerSignin";
-http://localhost:5000
+
 interface Product {
     productName: string;
     productPrice: number;
