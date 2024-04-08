@@ -23,7 +23,7 @@ const passwordschema = zod_1.z.string().min(6);
 const productNameschema = zod_1.z.string();
 const productPriceschema = zod_1.z.number().positive();
 // Customer signin
-router.post("/signin", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+router.post("/signin", async (req, res) =>  {
     const { email, password } = req.body;
     try {
         emailschema.parse(email);
@@ -51,7 +51,7 @@ router.post("/signin", (req, res) => __awaiter(void 0, void 0, void 0, function*
     catch (error) {
         console.error(error);
     }
-}));
+});
 // show all the product from a shop
 router.post("/products", customer_1.default, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { shopName } = req.body;
